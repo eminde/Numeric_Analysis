@@ -14,66 +14,68 @@ ronge_func = @(x)(1./(1+x.^2));
 
 %daraje 10
 x11 =linspace(-5,5,11);
-%daraje 50
-x51 =linspace(-5,5,51);
-%daraje 100
-x101 =linspace(-5,5,101);
+%daraje 20
+x21 =linspace(-5,5,21);
+%daraje 30
+x31 =linspace(-5,5,31);
 
 
 f11 = ronge_func(x11);
-f51 = ronge_func(x51);
-f101 = ronge_func(x101);
+f21 = ronge_func(x21);
+f31 = ronge_func(x31);
 
 g11 = abs_func(x11);
-g51 = abs_func(x51);
-g101 = abs_func(x101);
+g21 = abs_func(x21);
+g31 = abs_func(x31);
 
 h11 = sin_func(x11);
-h51 = sin_func(x51);
-h101 = sin_func(x101);
+h21 = sin_func(x21);
+h31 = sin_func(x31);
 
 s = -5:0.005:5;
 
 [p11f,a11f,D11f] = NewtonInterp(x11,f11,s);
-[p51f,a51f,D51f] = NewtonInterp(x51,f51,s);
-[p101f,a101f,D101f] = NewtonInterp(x101,f101,s);
+[p21f,a21f,D21f] = NewtonInterp(x21,f21,s);
+[p31f,a31f,D31f] = NewtonInterp(x31,f31,s);
 
 [p11g,a11g,D11g] = NewtonInterp(x11,g11,s);
-[p51g,a51g,D51g] = NewtonInterp(x51,g51,s);
-[p101g,a101g,D101g] = NewtonInterp(x101,g101,s);
+[p21g,a21g,D21g] = NewtonInterp(x21,g21,s);
+[p31g,a31g,D31g] = NewtonInterp(x31,g31,s);
 
 [p11h,a11h,D11h] = NewtonInterp(x11,h11,s);
-[p51h,a51h,D51h] = NewtonInterp(x51,h51,s);
-[p101h,a101h,D101h] = NewtonInterp(x101,h101,s);
+[p21h,a21h,D21h] = NewtonInterp(x21,h21,s);
+[p31h,a31h,D31h] = NewtonInterp(x31,h31,s);
 
 
 figure
-subplot(3,3,1);
+subplot(3,1,1);
 plot (x11,g11,'ok',s,abs_func(s),'-b',s,p11g,'--k');
-title('Abs - hamfasele')
-subplot(3,3,2);
-plot (x51,g51,'ok',s,abs_func(s),'-b',s,p51g,'--k');
-title('Abs - hamfasele')
-subplot(3,3,3);
-plot (x101,g101,'ok',s,abs_func(s),'-b',s,p101g,'--k');
-title('Abs - hamfasele')
+title('Abs - hamfasele - deg=10')
+subplot(3,1,2);
+plot (x21,g21,'ok',s,abs_func(s),'-b',s,p21g,'--k');
+title('Abs - hamfasele - deg=20')
+subplot(3,1,3);
+plot (x31,g31,'ok',s,abs_func(s),'-b',s,p31g,'--k');
+title('Abs - hamfasele - deg=30')
 
-subplot(3,3,4);
+figure
+subplot(3,1,1);
 plot (x11,f11,'ok',s,ronge_func(s),'-b',s,p11f,'--k');
-title('Ronge -  hamfasele')
-subplot(3,3,5);
-plot (x51,f51,'ok',s,ronge_func(s),'-b',s,p51f,'--k');
-title('Ronge -  hamfasele')
-subplot(3,3,6);
-plot (x101,f101,'ok',s,ronge_func(s),'-b',s,p101f,'--k');
-title('Ronge -  hamfasele')
+title('Ronge -  hamfasele - deg=10')
+subplot(3,1,2);
+plot (x21,f21,'ok',s,ronge_func(s),'-b',s,p21f,'--k');
+title('Ronge -  hamfasele - deg=20')
+subplot(3,1,3);
+plot (x31,f31,'ok',s,ronge_func(s),'-b',s,p31f,'--k');
+title('Ronge -  hamfasele - deg=30')
 
-subplot(3,3,7);
+figure
+subplot(3,1,1);
 plot (x11,h11,'ok',s,sin_func(s),'-b',s,p11h,'--k');
-title('Sin - hamfasele')
-subplot(3,3,8);
-plot (x51,h51,'ok',s,sin_func(s),'-b',s,p51h,'--k');
-title('Sin - hamfasele')
-subplot(3,3,9);
-plot (x101,h101,'ok',s,sin_func(s),'-b',s,p101h,'--k');
-title('Sin - hamfasele')
+title('Sin - hamfasele - deg=10')
+subplot(3,1,2);
+plot (x21,h21,'ok',s,sin_func(s),'-b',s,p21h,'--k');
+title('Sin - hamfasele - deg=20')
+subplot(3,1,3);
+plot (x31,h31,'ok',s,sin_func(s),'-b',s,p31h,'--k');
+title('Sin - hamfasele - deg=30')
