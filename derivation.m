@@ -10,7 +10,6 @@ fprime(x) = exp(x);
 %f(x)= exp((-x.^2)./2);
 
 
-
 x0=0;
 
 cf=1;
