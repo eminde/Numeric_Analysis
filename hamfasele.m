@@ -19,19 +19,23 @@ x11 =linspace(-5,5,11);
 x21 =linspace(-5,5,21);
 %daraje 30
 x31 =linspace(-5,5,31);
-
+%daraje 100
+x101 = linspace(-5,5,101);
 
 f11 = ronge_func(x11);
 f21 = ronge_func(x21);
 f31 = ronge_func(x31);
+f101 = ronge_func(x101);
 
 g11 = abs_func(x11);
 g21 = abs_func(x21);
 g31 = abs_func(x31);
+g101 = abs_func(x101);
 
 h11 = sin_func(x11);
 h21 = sin_func(x21);
 h31 = sin_func(x31);
+h101 = sin_func(x101);
 
 k11 = Gaussian_func(x11);
 k21 = Gaussian_func(x21);
@@ -65,6 +69,7 @@ s = -5:0.005:5;
 
 
 figure
+
 subplot(2,2,1);
 plot (x11,g11,'ok',s,abs_func(s),'-b',s,p11g,'--k');
 title('Abs - hamfasele - deg=10')
@@ -74,7 +79,7 @@ title('Abs - hamfasele - deg=20')
 subplot(2,2,3);
 plot (x31,g31,'ok',s,abs_func(s),'-b',s,p31g,'--k');
 title('Abs - hamfasele - deg=30')
-subplot(2,2,4);
+ subplot(2,2,4);
 plot (x101,g101,'ok',s,abs_func(s),'-b',s,p101g,'--k');
 title('Abs - hamfasele - deg=100')
 
@@ -115,7 +120,7 @@ plot (x21,k21,'ok',s,Gaussian_func(s),'-b',s,p21k,'--k');
 title('Gaussian - hamfasele - deg=20')
 subplot(2,2,3);
 plot (x31,k31,'ok',s,Gaussian_func(s),'-b',s,p31k,'--k');
-title('Gaussian - hamfasele - deg=30')
+% title('Gaussian - hamfasele - deg=30')
 subplot(2,2,4);
 plot (x101,k101,'ok',s,Gaussian_func(s),'-b',s,p101k,'--k');
 title('Gaussian - hamfasele - deg=100')
