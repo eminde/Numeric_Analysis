@@ -4,7 +4,7 @@ f =@(x)  exp(x);
 fprime =@(x) exp(x);
 
 %f =@(x) sin(x);
-%frime =@(x) cos(x);
+%fprime =@(x) cos(x);
 
 %f =@(x) (1/(1+x^2));
 %fprime =@(x) (-2*x/(1+x^2)^2);
