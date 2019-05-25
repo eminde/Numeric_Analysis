@@ -2,10 +2,13 @@
 %Different Functions
 syms x 
 f(x) =  exp(x);
+fprime(x) = exp(x);
+
 %f(x) = sin(x);
 %f(x) = abs(x);
 %f(x) = (1./(1+x.^2));
 %f(x)= exp((-x.^2)./2);
+
 
 
 x0=0;
@@ -16,7 +19,7 @@ h=0.1;
 h(1)=h;
 K=40;
 %K=10;
-fprime(x) = diff(f);
+
 for k = 1:K
     x1 = x0 +cf*h(k);
     F =eval( abs(f(x0)-f(x1))/h(k))
